@@ -5,14 +5,14 @@ if [ "$PHP_php5enmod" != "" ]; then
         echo >&2 "[Error] Document Root Directory not exist (please create $HTTPD__DocumentRoot)"
         exit 1
     fi
-    sed -i "s#DocumentRoot.*#DocumentRoot ${HTTPD__DocumentRoot}#" /etc/apache2/httpd.conf
+    sed -i "s#/var/www/localhost/htdocs#${HTTPD__DocumentRoot}#" /etc/apache2/httpd.conf
 fi
 
 if [ "$PHP_php5enmod" != "" ]; then docker-php-ext-install $PHP_php5enmod >/dev/null; fi
 
 if [ "$HTTPD_a2enmod" != "" ]; then
     for module in $HTTPD_a2enmod; do
-        echo "Enable mod: $i"
+        echo "Enable mod: $module"
         echo "LoadModule ${module}_module /usr/lib/apache2/mod_${module}.so" >>/etc/apache2/conf.d/42-custom.conf
     done
 fi
