@@ -90,7 +90,7 @@ RUN set -xe; \
     LDFLAGS="$PHP_LDFLAGS"; \
     docker-php-source extract; \
     cd /usr/src/php; \
-    gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
+    gnuArch="x86_64-linux-gnu" \
     ./configure \
     --build="$gnuArch" \
     --with-config-file-path="$PHP_INI_DIR" \
@@ -105,6 +105,7 @@ RUN set -xe; \
     --with-openssl \
     --with-zlib \
     --with-pcre-regex=/usr \
+    --with-libdir="lib/$gnuArch" \ 
     $(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') \
     $PHP_EXTRA_CONFIGURE_ARGS; \
     make -j "$(nproc)"; \
