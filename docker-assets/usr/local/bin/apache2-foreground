@@ -8,7 +8,9 @@ if [ "$PHP_php5enmod" != "" ]; then
     sed -i "s#/var/www/localhost/htdocs#${HTTPD__DocumentRoot}#" /etc/apache2/httpd.conf
 fi
 
-if [ "$PHP_php5enmod" != "" ]; then docker-php-ext-install $PHP_php5enmod >/dev/null; fi
+[[ "$PHP_php5enmod" != "" ]] && docker-php-ext-install $PHP_php5enmod >/dev/null
+
+[[ "$HTTPD__DirectoryIndex" != "" ]] && sed "s/DirectoryIndex index.html index.htm index.php/DirectoryIndex $HTTPD__DirectoryIndex/g"
 
 if [ "$HTTPD_a2enmod" != "" ]; then
     for module in $HTTPD_a2enmod; do
