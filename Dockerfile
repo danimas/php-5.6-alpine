@@ -126,6 +126,10 @@ RUN set -xe; \
     mkdir /run/apache2; \
     rm /var/www/localhost/htdocs/index.html
 
+EXPOSE 80
+
+WORKDIR /var/www/
+
 ENTRYPOINT ["docker-php-entrypoint"]
 
 CMD ["/usr/local/bin/apache2-foreground"]
