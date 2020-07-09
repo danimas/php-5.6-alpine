@@ -90,7 +90,7 @@ RUN set -xe; \
     LDFLAGS="$PHP_LDFLAGS"; \
     docker-php-source extract; \
     cd /usr/src/php; \
-    gnuArch="x86_64-linux-gnu" \
+    gnuArch="x86_64-linux-gnu"; \
     ./configure \
     --build="$gnuArch" \
     --with-config-file-path="$PHP_INI_DIR" \
