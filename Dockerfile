@@ -84,7 +84,6 @@ RUN set -xe; \
     pcre-dev \
     pkgconf \
     re2c \
-    add \
     shadow \
     sqlite-dev; \
     export CFLAGS="$PHP_CFLAGS" \
@@ -116,6 +115,8 @@ RUN set -xe; \
     make install; \
     { find /usr/local/bin /usr/local/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; }; \
     make clean; \
+    userdel xfs; \
+    usermod -u 33 apache; \
     cd /; \
     docker-php-source delete; \
     runDeps="$( \
@@ -129,9 +130,7 @@ RUN set -xe; \
     pecl update-channels; \
     rm -rf /tmp/pear ~/.pearrc; \
     mkdir /run/apache2; \
-    rm /var/www/localhost/htdocs/index.html; \
-    userdel xfs; \
-    usermod -u 33 apache
+    rm /var/www/localhost/htdocs/index.html
 
 EXPOSE 80
 
