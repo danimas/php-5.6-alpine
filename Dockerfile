@@ -84,6 +84,8 @@ RUN set -xe; \
     pcre-dev \
     pkgconf \
     re2c \
+    add \
+    shadow \
     sqlite-dev; \
     export CFLAGS="$PHP_CFLAGS" \
     CPPFLAGS="$PHP_CPPFLAGS" \
@@ -127,9 +129,8 @@ RUN set -xe; \
     pecl update-channels; \
     rm -rf /tmp/pear ~/.pearrc; \
     mkdir /run/apache2; \
-    rm /var/www/localhost/htdocs/index.html \
-    apk --no-cache add shadow \
-    userdel xfs \
+    rm /var/www/localhost/htdocs/index.html; \
+    userdel xfs; \
     usermod -u 33 apache
 
 EXPOSE 80
