@@ -107,7 +107,6 @@ RUN set -xe; \
     --with-libedit \
     --with-openssl \
     --with-zlib \
-    --with-pcre-regex=/usr \
     --with-libdir="lib/$gnuArch" \ 
     $(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') \
     $PHP_EXTRA_CONFIGURE_ARGS; \
