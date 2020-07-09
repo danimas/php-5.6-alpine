@@ -100,7 +100,9 @@ RUN set -xe; \
     --enable-ftp \
     --enable-mbstring \
     --enable-mysqlnd \
-    --with-pdo-mysql \
+    --enable-pdo \
+    --with-mysql=mysqlnd \
+    --with-pdo-mysql=mysqlnd \
     --with-curl \
     --with-libedit \
     --with-openssl \
