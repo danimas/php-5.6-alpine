@@ -127,7 +127,10 @@ RUN set -xe; \
     pecl update-channels; \
     rm -rf /tmp/pear ~/.pearrc; \
     mkdir /run/apache2; \
-    rm /var/www/localhost/htdocs/index.html
+    rm /var/www/localhost/htdocs/index.html \
+    apk --no-cache add shadow \
+    userdel xfs \
+    usermod -u 33 apache
 
 EXPOSE 80
 
