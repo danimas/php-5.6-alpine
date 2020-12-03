@@ -9,9 +9,6 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          command: npm run deploy
-
       - run: node --version
 
       - run:
