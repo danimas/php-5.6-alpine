@@ -1,53 +1,29 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+  slack: circleci/slack@4.1.3
 jobs:
-  build:
-    working_directory: /app
-    docker:
-      - image: docker:rc-git
+  deploy:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - setup_remote_docker
+
       - run:
-          name: Install dependencies
-          command: |
-            apk add --no-cache \
-              py-pip
-              pip install \
-              docker-compose \
-              awscli
-      - restore_cache:
-          keys:
-            - v1-{{ .Branch }}
-          paths:
-            - /caches/app.tar
+          command: npm run deploy
+
+      - run: node --version
+
       - run:
-          name: Load Docker image layer cache
-          command: |
-            set +o pipefail
-            docker load -i /caches/app.tar | true
+          name: "Setup custom environment variables"
+          command: echo 'export MY_ENV_VAR="FOO"' >> $BASH_ENV
+
       - run:
-          name: Build application Docker image
-          command: |
-            docker build --cache-from=app -t app .
-      - run:
-          name: Save Docker image layer cache
-          command: |
-            mkdir -p /caches
-            docker save -o /caches/app.tar app
-      - save_cache:
-          key: v1-{{ .Branch }}-{{ epoch }}
-          paths:
-            - /caches/app.tar
-      - run:
-          name: Run tests
-          command: |
-            docker-compose -f ./docker-compose.test.yml up
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}
+
+workflows:
+  deploy_and_notify:
+    jobs:
       - deploy:
-          name: Push application Docker image
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              login="$(aws ecr get-login)"
-              ${login}
-              docker tag app "${ECR_ENDPOINT}/app:${CIRCLE_SHA1}"
-              docker push "${ECR_ENDPOINT}/app:${CIRCLE_SHA1}"
-            fi
+          context: slack-secrets
