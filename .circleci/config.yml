@@ -13,7 +13,7 @@ jobs:
             - yarn-packages-master
             - yarn-packages-
 
-      - run: ls -la backend/berkeley
+      - run: ls -la backend/berkeley/node_modules
 
       - run:
           name: Install Dependencies
@@ -31,4 +31,4 @@ jobs:
             - ~/.rush
             - ~/.node-gyp
 
-      - run: ls -la backend/berkeley
+      - run: ls -la backend/berkeley/node_modules
