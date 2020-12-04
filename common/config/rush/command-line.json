@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
+
+  "commands": [
+    {
+      "commandKind": "global",
+      "name": "reset",
+      "summary": "Reinitialize unicorn.",
+      "description": "This job do a cleanup and REinitialize unicorn.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "rush cleanup && rush unicorn --build-frontend"
+    },
+    {
+      "commandKind": "global",
+      "name": "cleanup",
+      "summary": "This run an a compose-down, cleanup devel-data and temp folders. Finally remove stopped dockers.",
+      "description": "This job do this things: - compose-down, cleanup devel-data and temp folders. Finally remove stopped dockers.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/cleanup.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "populate-db",
+      "summary": "This run the sequalize fixtures.",
+      "description": "This job do this things: - compose-up mysql, and run tools/fixtures",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/populate-db.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "populate-elastic",
+      "summary": "Create an index with correct mapping.",
+      "description": "Create an index with correct mapping",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/populate-elastic.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "unicorn",
+      "summary": "This is a quick start. Prepare frontend dotenvs and install all basics",
+      "description": "This is a quick start. Prepare frontend dotenvs and install all basics.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/unicorn.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "create-dotenv",
+      "summary": "Create all project dotenv with dist version.",
+      "description": "Create all project dotenv with dist version.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/create-dotenv.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "xcode",
+      "summary": "Reinstall XCODE.",
+      "description": "Reinstall XCODE.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/xcode-install.sh"
+    },
+    {
+      "commandKind": "global",
+      "name": "e2e",
+      "summary": "Run end to end tests.",
+      "description": "Run end to end tests.",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "bash common/scripts/e2e-tests.sh"
+    },
+    {
+      "commandKind": "bulk",
+      "name": "lint",
+      "summary": "Run standardx.",
+      "description": "Run SandardX.",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    },
+    {
+      "commandKind": "bulk",
+      "name": "lint-fix",
+      "summary": "Run standardx.",
+      "description": "Run SandardX.",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    }
+  ],
+
+  "parameters": [
+    {
+      "parameterKind": "flag",
+      "longName": "--force",
+      "shortName": "-f",
+      "description": "Replace your current version with the dist version.",
+      "associatedCommands": [
+        "create-dotenv",
+        "populate-db",
+        "unicorn",
+        "populate-elastic"
+      ]
+    },
+    {
+      "parameterKind": "flag",
+      "longName": "--build-frontend",
+      "shortName": "-b",
+      "description": "build frontends.",
+      "associatedCommands": ["unicorn"]
+    }
+  ]
+}

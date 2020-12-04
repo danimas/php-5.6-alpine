@@ -1,0 +1,5 @@
+.idea
+tests_output/
+*.log
+tmp/
+.nyc_output

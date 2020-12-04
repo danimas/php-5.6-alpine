@@ -1,0 +1,23 @@
+{
+  "name": "signer",
+  "version": "1.0.2",
+  "description": "AWS Upload Signer for UPshow",
+  "scripts": {
+    "build": "",
+    "start": "docker-compose up signer -d",
+    "test": "exit 0",
+    "lint": "./node_modules/.bin/standardx",
+    "lint-fix": "./node_modules/.bin/standardx --fix"
+  },
+  "dependencies": {
+    "dotenv": "~8.2.0",
+    "cors": "~2.8.5",
+    "express-jwt": "~5.3.1",
+    "morgan": "~1.9.1",
+    "react-s3-uploader": "~4.9.2",
+    "express": "~4.17.1"
+  },
+  "devDependencies": {
+    "standardx": "~5.0.0"
+  }
+}

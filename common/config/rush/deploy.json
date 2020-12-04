@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/deploy-scenario.schema.json",
+
+  "deploymentProjectNames": [
+    "berkeley",
+    "avatars",
+    "billing",
+    "twitch-server",
+    "endeavor-server",
+    "betting-server",
+    "activation",
+    "lolesports-server",
+    "signer",
+    "boh-api"
+  ],
+
+  "projectSettings": [
+    {
+      "projectName": "berkeley",
+      "additionalProjectsToInclude": ["content-pulse", "libs"]
+    },
+    {
+      "projectName": "boh-api",
+      "additionalProjectsToInclude": ["berkeley", "libs"]
+    },
+    {
+      "projectName": "billing",
+      "additionalProjectsToInclude": ["libs"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "billing-api-testing",
+    "version": "1.0.0",
+    "description": "Billing API Testing",
+    "author": "",
+    "dependencies": {
+        "body-parser": "~1.19.0",
+        "dotenv": "~8.2.0",
+        "jest": "~24.9.0",
+        "stripe": "~8.29.0",
+        "supertest": "~3.4.2"
+    },
+    "scripts": {
+        "start": "(jest && node cleanup/cleanup.js) || node cleanup/cleanup.js",
+        "test": "(jest && node cleanup/cleanup.js) || node cleanup/cleanup.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:rifkyalikiki/example-api-testing.git"
+    }
+}
+

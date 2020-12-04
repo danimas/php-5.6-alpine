@@ -1,0 +1,82 @@
+{
+  "name": "@upshow/react-menu-list",
+  "version": "6.1.1",
+  "description": "React component for menu lists and submenus",
+  "main": "js/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rimraf js && babel -s inline -d js/ src/ --ignore '**/*.test.js' && flow-copy-source -v src js --ignore '**/*.test.*'",
+    "prepare": "rimraf js && babel -s inline -d js/ src/ --ignore '**/*.test.js' && flow-copy-source -v src js --ignore '**/*.test.*'",
+    "example-build": "cross-env NODE_ENV=development browserify -t babelify -do example/bundle.js example/main.js",
+    "example-watch": "cross-env NODE_ENV=development watchify -v -t babelify -do example/bundle.js example/main.js",
+    "example-build-prod": "cross-env NODE_ENV=production browserify -t babelify -do example/bundle.js example/main.js",
+    "test": "yarn run lint && yarn run flow_check && jest && tsc",
+    "flow_check": "flow check",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StreakYC/react-menu-list.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "menu",
+    "submenu"
+  ],
+  "files": [
+    "js",
+    "index.d.ts"
+  ],
+  "author": "Chris Cowan <agentme49@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StreakYC/react-menu-list/issues"
+  },
+  "homepage": "https://github.com/StreakYC/react-menu-list#readme",
+  "devDependencies": {
+    "@babel/cli": "~7.8.4",
+    "@babel/core": "~7.8.7",
+    "@babel/plugin-proposal-class-properties": "~7.8.3",
+    "@babel/plugin-transform-runtime": "~7.8.3",
+    "@babel/preset-env": "~7.8.7",
+    "@babel/preset-flow": "~7.8.3",
+    "@babel/preset-react": "~7.8.3",
+    "@babel/register": "~7.8.6",
+    "@types/react": "~16.9.23",
+    "babel-core": "~7.0.0-bridge.0",
+    "babel-eslint": "~10.1.0",
+    "babel-jest": "~24.9.0",
+    "babelify": "~10.0.0",
+    "browserify": "~16.5.0",
+    "cross-env": "~5.2.1",
+    "eslint": "~6.7.2",
+    "eslint-plugin-flowtype": "~4.6.0",
+    "eslint-plugin-react": "~7.19.0",
+    "flow-bin": "~0.104.0",
+    "flow-copy-source": "~2.0.9",
+    "jest": "~24.9.0",
+    "react": "~16.13.0",
+    "react-dom": "~16.13.0",
+    "react-test-renderer": "~16.13.0",
+    "rimraf": "~2.7.1",
+    "typescript": "~3.8.3",
+    "watchify": "~3.11.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "~7.5.5",
+    "array-find-index": "~1.0.2",
+    "kefir": "~3.8.6",
+    "kefir-bus": "~2.3.1",
+    "kefir-stopper": "~2.2.0",
+    "prop-types": "~15.7.2",
+    "react-float-anchor": "~3.4.0"
+  },
+  "peerDependencies": {
+    "react": "~16.13.0"
+  },
+  "directories": {
+    "example": "example"
+  }
+}

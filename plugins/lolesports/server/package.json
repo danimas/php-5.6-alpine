@@ -1,0 +1,31 @@
+{
+  "name": "lolesports-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "build": "",
+    "lint": "./node_modules/.bin/standardx",
+    "lint-fix": "./node_modules/.bin/standardx --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "~1.8.12",
+    "redis": "~2.8.0",
+    "bunyan-redis-stream": "~1.0.1",
+    "dotenv": "~8.2.0",
+    "express": "~4.17.1",
+    "morgan": "~1.9.1",
+    "cors": "~2.8.5",
+    "body-parser": "~1.19.0",
+    "bluebird": "~3.7.2",
+    "lodash": "~4.17.15",
+    "axios": "~0.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "~2.0.3",
+    "standardx": "~5.0.0"
+  }
+}

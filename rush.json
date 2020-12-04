@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.35.2",
+  "pnpmVersion": "5.13.4",
+  "pnpmOptions": {},
+  "nodeSupportedVersionRange": ">=14.0.0 <15.0.0",
+  "projectFolderMaxDepth": 3,
+  "gitPolicy": {},
+  "repository": {
+    "url": "git@github.com:sparkreel/unicorn.git"
+  },
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "variants": [],
+  "projects": [
+    {
+      "packageName": "backend",
+      "projectFolder": "frontend/backend",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "manager",
+      "projectFolder": "frontend/manager",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "ui4",
+      "projectFolder": "frontend/ui4",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "webview",
+      "projectFolder": "frontend/webview",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "activation",
+      "projectFolder": "backend/activation",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "boh-api",
+      "projectFolder": "backend/boh-api",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "upshield",
+      "projectFolder": "frontend/upshield",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "activator",
+      "projectFolder": "frontend/activator",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "signer",
+      "projectFolder": "backend/signer",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "berkeley",
+      "projectFolder": "backend/berkeley",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "upshow-analytics",
+      "projectFolder": "backend/upshow-analytics",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "avatars",
+      "projectFolder": "backend/avatars",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "content-pulse",
+      "projectFolder": "backend/content-pulse",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "billing",
+      "projectFolder": "backend/billing",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "login",
+      "projectFolder": "backend/login",
+      "reviewCategory": "production"
+    },
+    {
+      "packageName": "tools",
+      "projectFolder": "tools/",
+      "reviewCategory": "tools"
+    },
+    {
+      "packageName": "libs",
+      "projectFolder": "libs/",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/react-menu-list",
+      "projectFolder": "common/libs/react-menu-list",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/spotlight-player",
+      "projectFolder": "common/libs/spotlight-player",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "spotlight-player-tester",
+      "projectFolder": "common/libs/spotlight-player-example",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/upshownow",
+      "projectFolder": "common/libs/upshownow",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/lottie",
+      "projectFolder": "common/libs/lottie",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "lottie-plugin",
+      "projectFolder": "plugins/lottie-plugin",
+      "reviewCategory": "plugins"
+    },
+    {
+      "packageName": "failing-plugin",
+      "projectFolder": "plugins/failing-plugin",
+      "reviewCategory": "plugins"
+    },
+    {
+      "packageName": "storybook",
+      "projectFolder": "frontend/storybook",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "@upshow/rss-parser",
+      "projectFolder": "common/libs/rss-parser",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/media-info",
+      "projectFolder": "common/libs/media-info",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "@upshow/gsap",
+      "projectFolder": "common/libs/gsap",
+      "reviewCategory": "libs"
+    },
+    {
+      "packageName": "betting-server",
+      "projectFolder": "plugins/betting/server",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "betting-bww",
+      "projectFolder": "plugins/betting/bww",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "betting-draftkings",
+      "projectFolder": "plugins/betting/draftkings",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "twitch",
+      "projectFolder": "plugins/twitch/front",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "twitch-server",
+      "projectFolder": "plugins/twitch/server",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "endeavor-front",
+      "projectFolder": "plugins/endeavor/front",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "endeavor-server",
+      "projectFolder": "plugins/endeavor/server",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "lolesports-front",
+      "projectFolder": "plugins/lolesports/front",
+      "reviewCategory": "frontend"
+    },
+    {
+      "packageName": "lolesports-server",
+      "projectFolder": "plugins/lolesports/server",
+      "reviewCategory": "backend"
+    },
+    {
+      "packageName": "betting-bww-cta",
+      "projectFolder": "plugins/betting/bww-cta",
+      "reviewCategory": "frontend"
+    }
+  ]
+}

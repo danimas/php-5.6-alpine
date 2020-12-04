@@ -1,0 +1,29 @@
+{
+  "name": "billing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "docker-compose up billing -d",
+    "build": "",
+    "test": "jest '^(?:(?!testCleanup).)*$' || (node postTest.js && exit 1)",
+    "posttest": "node postTest.js && jest testCleanup -i"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.19.0",
+    "bunyan": "~1.8.12",
+    "bunyan-middleware": "~1.0.0",
+    "bunyan-redis-stream": "~1.0.1",
+    "compression": "~1.7.4",
+    "cors": "~2.8.5",
+    "dotenv": "~8.2.0",
+    "express": "~4.17.1",
+    "jest": "~24.9.0",
+    "lodash": "~4.17.15",
+    "morgan": "~1.9.1",
+    "redis": "~2.8.0",
+    "stripe": "~8.29.0"
+  }
+}

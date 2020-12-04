@@ -1,0 +1,13 @@
+/build/
+/phpunit.xml
+/var/*
+/var/cache/*
+/var/logs/*
+!/var/sessions
+/var/sessions/*
+!var/SymfonyRequirements.php
+/vendor/
+/web/bundles/
+/.idea
+/web/spotlights/
+

@@ -1,0 +1,37 @@
+{
+  "name": "storybook",
+  "version": "0.0.10",
+  "description": "UPshow Storybook",
+  "scripts": {
+    "build": "build-storybook --quiet -c .storybook -o build --loglevel warn",
+    "storybook": "start-storybook -p 9001"
+  },
+  "author": "UPshow",
+  "devDependencies": {
+    "@upshow/upshownow": "0.0.18",
+    "@babel/core": "~7.8.7",
+    "@babel/preset-env": "~7.8.7",
+    "@babel/preset-react": "~7.8.3",
+    "@storybook/addon-viewport": "~5.3.17",
+    "@storybook/addon-knobs": "~5.3.17",
+    "@tulipjs/eslint-config": "~1.1.1",
+    "babel-jest": "~24.9.0",
+    "babel-loader": "~8.1.0",
+    "css-loader": "~3.4.2",
+    "jest": "~24.9.0",
+    "node-sass": "~4.13.1",
+    "prop-types": "~15.7.2",
+    "sass-loader": "~7.1.0",
+    "style-loader": "~0.23.1",
+    "url-loader": "~1.1.2",
+    "@storybook/react": "^5.3.17",
+    "webpack": "4.42.0"
+  },
+  "dependencies": {
+    "brotli-webpack-plugin": "~1.1.0",
+    "react": "~16.13.0",
+    "react-dom": "~16.13.0",
+    "react-textfit": "~1.1.0",
+    "styled-components": "~4.2.1"
+  }
+}

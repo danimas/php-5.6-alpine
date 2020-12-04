@@ -1,0 +1,17 @@
+{
+  "name": "avatars",
+  "version": "1.0.0",
+  "description": "Avatars for UPshow",
+  "scripts": {
+    "build": "",
+    "start": "docker-compose up avatars -d",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "dotenv": "~8.2.0",
+    "cors": "~2.8.5",
+    "morgan": "~1.9.1",
+    "express": "~4.17.1",
+    "jdenticon": "~2.2.0"
+  }
+}

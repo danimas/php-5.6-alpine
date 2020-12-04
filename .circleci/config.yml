@@ -1,8 +1,34 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
-#
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ .Branch }}-{{ checksum "rush.json" }}
+            - yarn-packages-{{ .Branch }}
+            - yarn-packages-master
+            - yarn-packages-
+
+      - run: ls -la backend/berkeley
+
+      - run:
+          name: Install Dependencies
+          command: node common/scripts/install-run-rush.js update
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ .Branch }}-{{ checksum "rush.json" }}
+          paths:
+            - common/config/rush/pnpm-lock.yaml
+            - common/temp
+            - "**/node_modules"
+            - "**/.rush"
+            - ~/.npm
+            - ~/.rush
+            - ~/.node-gyp
+
+      - run: ls -la backend/berkeley

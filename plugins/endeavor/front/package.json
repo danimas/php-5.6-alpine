@@ -1,0 +1,60 @@
+{
+  "name": "endeavor-front",
+  "version": "0.4.2",
+  "private": true,
+  "dependencies": {
+    "react": "~16.13.0",
+    "react-dom": "~16.13.0",
+    "react-scripts": "~3.4.1",
+    "react-player": "~2.7.0",
+    "wisper-rpc": "~0.3.1-0",
+    "qs": "~6.9.1",
+    "moment": "~2.24.0",
+    "node-sass": "~4.13.1",
+    "axios": "~0.19.2",
+    "lodash": "~4.17.15",
+    "uuid": "~8.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "~4.2.4",
+    "@testing-library/react": "10.0.4",
+    "@testing-library/user-event": "~7.2.1",
+    "standardx": "~5.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint": "./node_modules/.bin/standardx",
+    "lint-fix": "./node_modules/.bin/standardx --fix"
+  },  
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "camelcase": 0,
+      "semi": [2, "always"],
+      "indent": ["error", 4, {"ignoredNodes": ["JSXElement *"]}],
+      "react/jsx-indent": ["error", 4],
+      "react/jsx-closing-bracket-location": [0],
+      "react/prop-types": [1, {
+        "skipUndeclared": true
+      }]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+/web/bundles/
+/app/cache
+/app/DoctrineMigrations/
+/app/logs
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/app/var/jwt/*
+/build/
+/vendor/
+/bin/
+/composer.phar
+.idea
+.vscode
+packages.json
+# New backend files
+/web/backend

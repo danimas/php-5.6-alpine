@@ -1,0 +1,14 @@
+/web/bundles/
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+/bin/
+/composer.phar
+.idea
+packages.json
+.sass-cache
+analytics/*
+!analytics/.gitkeep
+/web/spotlights/*
+!/web/spotlights/.gitkeep
