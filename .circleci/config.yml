@@ -1,32 +1,7 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.1.0
-  slack: circleci/slack@4.1.3
-jobs:
-  deploy:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-
-      - run: node --version
-
-      - run:
-          name: "Setup custom environment variables"
-          command: echo 'export MY_ENV_VAR="FOO"' >> $BASH_ENV
-
-      - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR}
-
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
-      - slack/notify:
-          event: pass
-
+  node: circleci/node@3.0.0
 workflows:
-  deploy_and_notify:
+  node-tests:
     jobs:
-      - deploy:
-          context: slack-secrets
+      - node/test
