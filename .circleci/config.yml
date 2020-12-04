@@ -1,6 +1,7 @@
 version: 2.1
 jobs:
   build:
+    resource_class: xlarge
     docker:
       - image: circleci/node:14
     steps:
@@ -25,12 +26,12 @@ jobs:
           paths:
             - common/config/rush/pnpm-lock.yaml
             - common/temp
-            - "backend/*/node_modules"
-            - "frontend/*/node_modules"
-            - "plugins/*/*/node_modules"
-            - "backend/*/.rush"
-            - "frontend/*/.rush"
-            - "plugins/*/*/.rush"
+            - backend/*/node_modules
+            - frontend/*/node_modules
+            - plugins/*/*/node_modules
+            - backend/*/.rush
+            - frontend/*/.rush
+            - plugins/*/*/.rush
             - ~/.npm
             - ~/.rush
             - ~/.node-gyp
