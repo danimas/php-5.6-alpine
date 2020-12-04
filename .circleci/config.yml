@@ -13,7 +13,7 @@ jobs:
             - yarn-packages-master
             - yarn-packages-
 
-      - run: ls -la backend/berkeley/node_modules
+      - run: ls -la backend/berkeley/
 
       - run:
           name: Install Dependencies
@@ -25,8 +25,12 @@ jobs:
           paths:
             - common/config/rush/pnpm-lock.yaml
             - common/temp
-            - "**/node_modules"
-            - "**/.rush"
+            - "backend/*/node_modules"
+            - "frontend/*/node_modules"
+            - "plugins/*/*/node_modules"
+            - "backend/*/.rush"
+            - "frontend/*/.rush"
+            - "plugins/*/*/.rush"
             - ~/.npm
             - ~/.rush
             - ~/.node-gyp
